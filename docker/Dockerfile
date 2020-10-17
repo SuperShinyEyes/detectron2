@@ -42,7 +42,10 @@ WORKDIR /home/appuser/detectron2_repo
 
 EXPOSE 8002
 
-RUN pip install jupyterlab
+USER root
+RUN apt-get update && apt-get install -y unzip
+USER appuser
+RUN pip install jupyterlab pandas ranger-fm ipython ipdb
 
 
 

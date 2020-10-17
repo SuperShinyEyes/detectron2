@@ -1,6 +1,9 @@
+#!/bin/bash
+
 docker run --gpus all -it \
 	--shm-size=8gb --env="DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     -p 8002:8002 \
+    -p 6006:6006 \
     -v /home/azureuser/.jupyter:/root/.jupyter \
     -v /home/azureuser/detectron2:/home/appuser/detectron2 \
 	detectron2:v0 \
